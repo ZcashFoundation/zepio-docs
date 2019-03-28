@@ -28,7 +28,6 @@
     "eslint-config-airbnb": "^17.1.0",
     "flow-bin": "^0.89.0",
     "glow": "^1.2.1",
-    "pre-commit": "^1.2.2",
     "webpack-hot-client": "^4.1.1"
   },
   "eslintConfig": {
@@ -39,9 +38,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "pre-commit": [
-    "lint:precommit",
-    "flow:precommit"
   ]
 }
