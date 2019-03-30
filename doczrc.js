@@ -3,7 +3,11 @@
 export default {
   title: 'Zepio Documentation',
   description: 'Zepio Documentation',
-  plugins: [],
+  themeConfig: {
+    colors: {
+      primary: 'tomato',
+    },
+  },
   htmlContext: {
     head: {
       links: [

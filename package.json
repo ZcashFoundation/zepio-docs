@@ -1,16 +1,17 @@
 {
   "name": "zepio-docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "author": {
-    "name": "Andre Neves",
+    "name": "André Neves",
     "email": "andrerfneves@protonmail.com",
     "url": "https://andrenev.es"
   },
   "scripts": {
     "start": "yarn docz:dev",
     "docz:dev": "docz dev --port 4000",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "deploy:stag": "now"
   },
   "dependencies": {
     "polished": "^2.3.1",
