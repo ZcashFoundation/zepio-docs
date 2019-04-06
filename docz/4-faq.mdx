@@ -5,49 +5,43 @@ route: /faq
 
 # FAQ
 
-This section has been abstracted from the ZecWallet docs. Has yet to go through any sort of editing or review so consider it as placeholder
+## Software
 
-## Wallet
-
-### Where do I download the software?
+### Where do I download the wallet software?
 
 Zepio is available to download from the Zcash Foundation GitHub repository. The releases page lists the latest available downloads for each platform.
 
-### Which version should I download?
+### Which version of Zepio should I download?
 
-See the installation section for more details specific for your platform.
+You should always aim to stay at the latest stable build. See the [installation](http://changeme.com) section for more details.
 
 ### How do I verify the download file?
 
-Starting from v0.5.10 all ZecWallet releases are signed. You may download the detached signatures on the releases page and verify that the software was signed with the published public key. In addition, each release contains SHA256 checksums that may additionally be verified. For more information, see the Verifying the download section of the Installation guide.
+Starting from v0.6.0 all Zepio releases are signed. You may download the detached signatures on the releases page and verify that the software was signed with the published public key. In addition, each release contains SHA256 checksums that may additionally be verified.
 
-### Is ZecWallet a light client?
+## Zcash
 
-No, ZecWallet requires a full zcashd node to operate. A light client protocol is currently in development that would substantially reduce the storage and bandwidth requirements for a light wallet. Currently, to use shielded transactions, you need to run a full node.
+### Is Zepio a light client?
 
-### How large is the blockchain?
+No, Zepio requires a full `zcashd` node in order to operate. A light client protocol is currently in development that would substantially reduce the storage and bandwidth requirements for a light wallet. Currently, to use shielded transactions, you need to run a full node. Zepio has a built-in `zcashd` node, but it will also play well with your custom `zcashd` setup.
 
-Currently, the blockchain data directory is around 22GB (Feb 2019) and will continue to grow over time.
+### How large is the Zcash blockchain data?
 
-### Can I change the location of the data directory?
-
-If you are starting ZecWallet for the first time, then you can choose the Advanced Config option and select the desired location of your data directory, which may, for example, be on a separate disk.
+Currently, the blockchain data directory is around 27GB (May 2019) and will continue to grow over time.
 
 ### Can I use a custom fee?
 
-Yes, though it is advised to use the default 0.0001 fee to prevent your transactions from being distinguishable, you may override this behaviour in the app Options
-
-## Blockchain
+Yes. It is advised to maintain the default `0.0001 ZEC` fee to prevent your transactions from being distinguishable. However, you can find the custom fee picker inside of the Advanced Options on the Send view.
 
 ### What’s the difference between Transparent, Sprout and Sapling addresses?
 
-Transparent addresses start with a t prefix and are transparent like Bitcoin and offer no privacy properties. Sprout addresses have a zc prefix and are the first generation of shielded addresses. Sprout addresses have been superseded by Sapling addresses which have a zs prefix. While Sprout addresses may still be used, it is recommended to use Sapling addresses due to the performance improvements and updated system parameters. To move funds between Sprout and Sapling addresses see the turnstile migration documentation. For more detailed information on the types of addresses in Zcash see this page.
+Transparent addresses start with a `t` prefix and are just like Bitcoin addresses, offering no privacy properties. Sprout addresses have a `zc` prefix and are the first generation of Zcash shielded addresses. Sprout addresses have been superseded by Sapling addresses which have a `zs` prefix. While Sprout addresses may still be used, it is recommended to use Sapling addresses due to the performance improvements and updated system parameters.
 
-Note that on testnet, transparent addresses have a prefix tm, Sprout have a zt prefix and Sapling ztestsapling.
+> Note that on testnet, transparent addresses have a prefix `tm`, Sprout have a `zt` prefix and Sapling `ztestsapling`.
 
 ### How long does a Sapling transaction take?
 
-Sapling greatly reduced the time taken to perform shielded proofs down to just a few seconds though this value does depend on hardware and the number of shielded inputs/outputs. Sending from a transparent address to a Sapling one is typically completed in under 0.5 seconds. Legacy Sprout transactions take in the order of 70-90 seconds but this is also dependent on hardware and the number of JoinSplits. For more information see this post.
+Sapling greatly reduced the time taken to perform shielded proofs down to just a few seconds though this value does depend on hardware and the number of shielded inputs/outputs. Sending from a transparent address to a Sapling one is typically completed in under 0.5 seconds. Legacy Sprout transactions take in the order of 70-90 seconds but this is also dependent on hardware and the number of JoinSplits.
 
 ### Where is the default data directory on each platform?
 
@@ -63,8 +57,7 @@ zcash.conf is located in the default data directory and will be in this location
 
 ### Can I use ZecWallet with an external node?
 
-Yes, see this section for how to connect to an external zcashd.
-
+Yes.
 
 ## Transactions
 
