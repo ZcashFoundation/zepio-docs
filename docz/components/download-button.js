@@ -14,7 +14,7 @@ const Wrapper = styled.a`
   padding: 15px 20px;
   border-radius: 3px;
   background-color: tomato;
-  max-width: 300px;
+  max-width: 400px;
   cursor: pointer;
   text-decoration: none;
 `;

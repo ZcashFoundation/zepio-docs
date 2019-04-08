@@ -5,21 +5,83 @@ route: /installation
 
 # Installation
 
-Use the sidebar menu to browse the docs
+**Zepio** runs on Windows, macOS and Linux and is available to download from the GitHub releases page. Follow the platform-specific instructions below to install **Zepio**. You can also compile the application from source.
+
+## Supported Platforms
+
+### macOS
+
+Download the macOS release named `Zepio-X.X.X.dmg` and double-click on file to open it. Drag Zepio to the Applications link to install. You will need to give authorization for the program to run.
+
+### Windows
+
+Download and run the .exe installer (named Zepio Setup X.X.X.exe) and follow the prompts. You will need to give authorization for the program to run.
+
+### Linux
+
+If you are on Debian/Ubuntu, download the .deb package and install it.
+
+`sudo dpkg -i linux-deb-zecwallet-v0.6.6.deb`
+
+`sudo apt install -f`
+
+Or you can download and run the binaries directly.
+
+`tar -xvf zecwallet-v0.6.6.tar.gz`
+
+`./zecwallet-v0.6.6/zecwallet`
+
+## Verifying the download
+
+Starting from vX.X.X all **Zepio** releases are signed and contain checksums that may be validated to ensure the integrity of the downloaded software. The current signatures and checksums are available to download via the `signatures-vX.X.X.tar.gz` file on the releases page.
+
+## Signatures
+
+### Import public key
+
+The public key is available to download from the GitHub repository. Save the file and import via:
+
+`gpg --import public_key.asc`
+
+> The public key fingerprint is `C231 72D0 C956 9591 ECEC  8ECB 0E1E 9027 9521 EBB4`
+
+Alternatively, you can import from a keyserver using the following command:
+
+`gpg --keyserver pool.sks-keyservers.net --recv-keys 0E1E90279521EBB4`
+
+## Verifying Signatures
+
+Once the key has been imported, you can run the following command to verify the signature:
+
+`gpg --verify <filename.sig> <downloaded-filename-to-verify>`
+
+Assuming a good signature, you will see a similar output to the below.
+
+`gpg --verify Zepio-X.X.X.dmg.sig Zepio-X.X.X.dmg`
+
+`gpg: Signature made Wed 20 Mar 11:06:04 2019 PST`
+
+`gpg: using RSA key C23172D0C9569591ECEC8ECB0E1E90279521EBB4`
+
+`gpg: Good signature from "andrerfneves (PGP Key for zepio) <zcash@andrenev.es>" [full]`
+
+## Checksums
+
+The file `sha256sum-vX.X.X.txt` contains the SHA256 checksums for each download. You can verify that the file you downloaded matches this checksum via the following command:
+
+`sha256sum Zepio-X.X.X.dmg`
+
+`f818d42e2850050ff9fa22408f595d51855ceaa895336e67a0.6.661c339bc24  Zepio-X.X.X.dmg`
 
 
-## Linux
+## System requirements
 
-Linux
+If using the embedded zcashd the recommended system requirements are 5GB of free RAM and 30GB of free disk (the size of the blockchain increases over time).
 
-## macOS
+## Compiling from source
 
-macOS
+For an in-depth explanation on how to build **Zepio** from source, please follow the `Building` section of the project's codebase README.
 
-## Windows
+## Upgrading
 
-Windows
-
-## From Source
-
-Source
+It is important to keep your version of **Zepio** up to date as new features are regularly added and bugs fixed. To download, follow the instructions to install as your data directory and wallet will be untouched throughout.
