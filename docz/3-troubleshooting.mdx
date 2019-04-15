@@ -15,21 +15,21 @@ The debug.log file is the first place to start for troubleshooting issues. The f
 
 > `Linux: ~/.zcash/debug.log`
 
-If you have specified a custom datadir option then the debug.log file will be located in that directory. Using a tool such as tail you can view the last 100 lines with the following command:
+If you have specified a custom `datadir` option then the debug.log file will be located in that directory. Using a tool such as tail you can view the last 100 lines with the following command:
 
 `tail -n 100 ~/.zcash/debug.log`
 
 ## Could not start embedded `zcashd`
 
-This means Zepio couldn’t start its embedded zcashd for some reason. Zepio should display the error reported from `zcash` in the loading screen. You might be able to solve this by simply restarting Zepio, but if you repeatedly see this error, it might be one of the following reasons:
+This means **Zepio** couldn’t start its embedded `zcashd` full node daemon for some reason. **Zepio** should display the error reported from `the daemon` in the loading screen. You might be able to solve this by simply restarting **Zepio**, but if you repeatedly see this error, it might be one of the following reasons:
 
-> You might have corrupt zcash params: In this case, you may try deleting your params and letting ZecWallet download them again.
+> You might have corrupt zcash params: In this case, you may try deleting your params and letting **Zepio** download them again.
 
-If all else fails, you can run an external `zcashd` and Zepio will connect to it.
+If all else fails, you can run an external `zcashd` and **Zepio** will seamlessly connect to it.
 
 ## Shielded transactions are not displayed in the transaction tab
 
-By default, `zcashd` does not store outgoing shielded transactions. To overcome this, Zepio will store shielded transaction information locally. There is no way (currently) of recovering the information about outgoing fully shielded spends, so deleting the application and reinstalling will result in a loss of metadata.
+By default, `zcashd` does not store outgoing shielded transactions. To overcome this, **Zepio** will store shielded transaction information locally. There is no way (currently) of recovering the information about outgoing fully shielded spends, so deleting the application and reinstalling will result in a loss of metadata.
 
 ## My issue isn’t resolved
 

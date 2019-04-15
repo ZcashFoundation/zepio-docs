@@ -3,35 +3,40 @@ name: FAQ
 route: /faq
 ---
 
+import { DownloadButton } from './components/download-button';
+
 # FAQ
 
-## Where do I download the wallet software?
+## Where do I download the Zepio software?
 
-Zepio is available to download from the Zcash Foundation GitHub repository. The releases page lists the latest available downloads for each platform.
+**Zepio** is available to download from the Zcash Foundation GitHub repository. The releases page lists the latest available downloads for each platform.
+
+<DownloadButton label='Download Zepio' />
+
 
 ## Which version of Zepio should I download?
 
-You should always aim to stay at the latest stable build. See the [installation](http://changeme.com) section for more details.
+You should always aim to stay at the latest stable build. See the [installation](/installation) section for more details.
 
 ## How do I verify the download file?
 
-Starting from v0.6.0 all Zepio releases are signed. You may download the detached signatures on the releases page and verify that the software was signed with the published public key. In addition, each release contains SHA256 checksums that may additionally be verified.
+Starting from v0.6.0 all **Zepio** releases are signed. You may download the attached signatures on the releases page and verify that the software was signed with the published public key. In addition, each release contains SHA256 checksums that may additionally be verified.
 
 ## Is Zepio a light client?
 
-No, Zepio requires a full `zcashd` node in order to operate. A light client protocol is currently in development that would substantially reduce the storage and bandwidth requirements for a light wallet. Currently, to use shielded transactions, you need to run a full node. Zepio has a built-in `zcashd` node, but it will also play well with your custom `zcashd` setup.
+No, **Zepio** requires a full `zcashd` node in order to operate. A light client protocol is currently in development that would substantially reduce the storage and bandwidth requirements for **Zepio**. Currently, to use shielded transactions, you need to run a full node. **Zepio** has a built-in `zcashd` node, but it will also play well with your custom `zcashd` setup.
 
 ## How large is the Zcash blockchain data?
 
-Currently, the blockchain data directory is around 27GB (May 2019) and will continue to grow over time.
+Currently, the blockchain data directory is around 27GB (April 2019) and will continue to grow over time.
 
 ## Can I use a custom fee?
 
-Yes. It is advised to maintain the default `0.0001 ZEC` fee to prevent your transactions from being distinguishable. However, you can find the custom fee picker inside of the Advanced Options on the Send view.
+Yes. It is advised to maintain the default `0.0001 ZEC` fee to prevent your transactions from being distinguishable. However, you can find the custom fee picker inside of the `Advanced Options` on the `Send` view.
 
 ## What’s the difference between Transparent, Sprout and Sapling addresses?
 
-Transparent addresses start with a `t` prefix and are just like Bitcoin addresses, offering no privacy properties. Sprout addresses have a `zc` prefix and are the first generation of Zcash shielded addresses. Sprout addresses have been superseded by Sapling addresses which have a `zs` prefix. While Sprout addresses may still be used, it is recommended to use Sapling addresses due to the performance improvements and updated system parameters.
+Transparent addresses start with a `t` prefix and behave just like Bitcoin addresses, offering no specific privacy properties. Sprout addresses have a `zc` prefix and are the first generation of Zcash shielded addresses. Sprout addresses have been superseded by Sapling addresses which have a `zs` prefix. While Sprout addresses may still be used, it is recommended to use Sapling addresses due to the performance improvements and updated system parameters.
 
 > Note that on testnet, transparent addresses have a prefix `tm`, Sprout have a `zt` prefix and Sapling `ztestsapling`.
 
@@ -49,31 +54,31 @@ By default, the location of the data directory, which stores the wallet, zcash.c
 
 ## Where is zcash.conf located?
 
-zcash.conf is located in the default data directory and will be in this location even if the datadir parameter has been set to a custom value.
+`zcash.conf` is located in the default data directory and will be in this location even if the `datadir` parameter has been set to a custom value.
 
 ## Can I use Zepio with an external node?
 
-Yes. Zepio is able to read your zcash.conf file and connect to your external node.
+Yes. **Zepio** is able to read your `zcash.conf` file and connect to your external node.
 
 ## Does Zepio work on testnet?
 
-Yes, Zepio supports both `mainnet` and `testnet`. To switch between the chains, head over to Settings > Zcash Network. Beware that Zepio will need to sync the entire blockchain data for each of the chains.
+Yes, **Zepio** supports both `mainnet` and `testnet`. To switch between the chains, head over to `Settings` > `Zcash Network`. Beware that **Zepio** will need to sync the entire blockchain data for either/both chains before you are able to spend coins.
 
 ## Does Zepio support viewing keys?
 
-Not yet, as zcashd doesn’t currently support Sapling viewing keys.
+Not yet, as `zcashd` doesn’t currently support Sapling viewing keys.
 
 ## Is the wallet encrypted?
 
-No, wallet encryption is currently disabled by zcashd. You should use full-disk encryption (or encryption of your home directory) to protect your wallet.dat file at rest, and should assume (even unprivileged) users who are running on your OS can read your wallet.dat file.
+No, wallet encryption is currently disabled by `zcashd`. You should use full-disk encryption (or encryption of your home directory) to protect your `wallet.dat` file at rest, and should assume (even unprivileged) users who are running on your OS can read your `wallet.dat` file.
 
 ## Why does my change go to a new address?
 
-Like Bitcoin, when using transparent addresses, change from a transaction goes to a new transparent address. Zepio allows you to set an option to automatically send this change to a Sapling address via the application Options. As the ‘feature’ was added in Bitcoin as a measure to preserve privacy and prevent trivial linking of transactions on the blockchain, shielded (z) addresses do not have this property and any change is returned to the sending (z) address by default.
+Like Bitcoin, when using transparent addresses, change from a transaction goes to a new transparent address. This ‘feature’ was added in Bitcoin as a measure to preserve privacy and prevent trivial linking of transactions on the blockchain. On the other hand shielded (z) addresses do not have this property and any change is returned to the sending (z) address by default.
 
 ## Will Zepio remember my outgoing shielded sends?
 
-Yes, by default Zepio will store shielded sends locally as zcashd does not provide this information.
+Yes, by default **Zepio** will store outgoing shielded transactions locally as `zcashd` does not provide this information.
 
 ## Can I use Zepio with a hardware wallet?
 
@@ -81,4 +86,4 @@ No, this is currently not supported.
 
 ## Can I remove an address from the wallet?
 
-No, addresses cannot be removed from the wallet. It is advised that you export the private keys for addresses you are interested in and then delete the wallet.dat file. You can then import the private keys you require in a fresh, empty wallet.
+No, addresses cannot be removed from the wallet. In order to remove addresses, it is advised that you export the private keys for the addresses you are interested in, and then delete the `wallet.dat` file. You can then import the private keys you require in a fresh, empty wallet.

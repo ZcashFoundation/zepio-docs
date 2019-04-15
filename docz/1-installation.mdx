@@ -3,37 +3,41 @@ name: Installation
 route: /installation
 ---
 
+import { DownloadButton } from './components/download-button';
+
 # Installation
 
 **Zepio** runs on Windows, macOS and Linux and is available to download from the GitHub releases page. Follow the platform-specific instructions below to install **Zepio**. You can also compile the application from source.
+
+<DownloadButton label='Download Zepio (macOS | Windows | Linux)' />
 
 ## Supported Platforms
 
 ### macOS
 
-Download the macOS release named `Zepio-X.X.X.dmg` and double-click on file to open it. Drag Zepio to the Applications link to install. You will need to give authorization for the program to run.
+Download the macOS release named `Zepio-vX.X.X.dmg` and double-click on file to open it. Drag Zepio to the Applications link to install. You may need to give system authorization for the program to run.
 
 ### Windows
 
-Download and run the .exe installer (named Zepio Setup X.X.X.exe) and follow the prompts. You will need to give authorization for the program to run.
+Download and run the `Zepio-Windows-vX.X.X.exe` installer and follow the prompts. You may need to give authorization for the program to run.
 
 ### Linux
 
-If you are on Debian/Ubuntu, download the .deb package and install it.
+If you are on Debian or Ubuntu, download the `.deb` package and install it:
 
 `sudo dpkg -i linux-deb-zecwallet-v0.6.6.deb`
 
 `sudo apt install -f`
 
-Or you can download and run the binaries directly.
+Or you can download and run the binaries directly, like so:
 
-`tar -xvf zecwallet-v0.6.6.tar.gz`
+`tar -xvf zepio-vX.X.X.tar.gz`
 
-`./zecwallet-v0.6.6/zecwallet`
+`./zepio-vX.X.X/zecwallet`
 
 ## Verifying the download
 
-Starting from vX.X.X all **Zepio** releases are signed and contain checksums that may be validated to ensure the integrity of the downloaded software. The current signatures and checksums are available to download via the `signatures-vX.X.X.tar.gz` file on the releases page.
+Starting with version `vX.X.X`, all **Zepio** releases are signed and contain checksums that may be validated to ensure the integrity of the downloaded software. The current signatures and checksums are available to download via the `signatures-vX.X.X.zip` file on the releases page.
 
 ## Signatures
 
@@ -57,7 +61,7 @@ Once the key has been imported, you can run the following command to verify the 
 
 Assuming a good signature, you will see a similar output to the below.
 
-`gpg --verify Zepio-X.X.X.dmg.sig Zepio-X.X.X.dmg`
+`gpg --verify Zepio-vX.X.X.dmg.sig Zepio-vX.X.X.dmg`
 
 `gpg: Signature made Wed 20 Mar 11:06:04 2019 PST`
 
@@ -69,19 +73,15 @@ Assuming a good signature, you will see a similar output to the below.
 
 The file `sha256sum-vX.X.X.txt` contains the SHA256 checksums for each download. You can verify that the file you downloaded matches this checksum via the following command:
 
-`sha256sum Zepio-X.X.X.dmg`
+`sha256sum Zepio-vX.X.X.dmg`
 
-`f818d42e2850050ff9fa22408f595d51855ceaa895336e67a0.6.661c339bc24  Zepio-X.X.X.dmg`
+`f818d42e2850050ff9fa22408f595d51855ceaa895336e67a0.6.661c339bc24  Zepio-vX.X.X.dmg`
 
 
 ## System requirements
 
-If using the embedded zcashd the recommended system requirements are 5GB of free RAM and 30GB of free disk (the size of the blockchain increases over time).
+If using the embedded `zcashd` full node daemon, the recommended system requirements are 5GB of free RAM and 30GB of free disk (the size of the blockchain increases over time).
 
 ## Compiling from source
 
-For an in-depth explanation on how to build **Zepio** from source, please follow the `Building` section of the project's codebase README.
-
-## Upgrading
-
-It is important to keep your version of **Zepio** up to date as new features are regularly added and bugs fixed. To download, follow the instructions to install as your data directory and wallet will be untouched throughout.
+For an in-depth explanation on how to build **Zepio** from source, please follow the `Building` section of the project's `README`.
