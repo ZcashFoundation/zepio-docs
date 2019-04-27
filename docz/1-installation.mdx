@@ -1,0 +1,87 @@
+---
+name: Installation
+route: /installation
+---
+
+import { DownloadButton } from './components/download-button';
+
+# Installation
+
+**Zepio** runs on Windows, macOS and Linux and is available to download from the GitHub releases page. Follow the platform-specific instructions below to install **Zepio**. You can also compile the application from source.
+
+<DownloadButton label='Download Zepio (macOS | Windows | Linux)' />
+
+## Supported Platforms
+
+### macOS
+
+Download the macOS release named `Zepio-vX.X.X.dmg` and double-click on file to open it. Drag Zepio to the Applications link to install. You may need to give system authorization for the program to run.
+
+### Windows
+
+Download and run the `Zepio-Windows-vX.X.X.exe` installer and follow the prompts. You may need to give authorization for the program to run.
+
+### Linux
+
+If you are on Debian or Ubuntu, download the `.deb` package and install it:
+
+`sudo dpkg -i zepio-linux-vX.X.X.deb`
+
+`sudo apt install -f`
+
+Or you can download and run the binaries directly, like so:
+
+`tar -xvf zepio-linux-vX.X.X.tar.gz`
+
+`./zepio-vX.X.X/zepio`
+
+## Verifying the download
+
+Starting with version `vX.X.X`, all **Zepio** releases are signed and contain checksums that may be validated to ensure the integrity of the downloaded software. The current signatures and checksums are available to download via the `signatures-vX.X.X.zip` file on the releases page.
+
+## Signatures
+
+### Import public key
+
+The public key is available to download from the GitHub repository. Save the file and import via:
+
+`gpg --import public_key.asc`
+
+> The public key fingerprint is `C231 72D0 C956 9591 ECEC  8ECB 0E1E 9027 9521 EBB4`
+
+Alternatively, you can import from a keyserver using the following command:
+
+`gpg --keyserver pool.sks-keyservers.net --recv-keys 0E1E90279521EBB4`
+
+## Verifying Signatures
+
+Once the key has been imported, you can run the following command to verify the signature:
+
+`gpg --verify <filename.sig> <downloaded-filename-to-verify>`
+
+Assuming a good signature, you will see a similar output to the below.
+
+`gpg --verify Zepio-vX.X.X.dmg.sig Zepio-vX.X.X.dmg`
+
+`gpg: Signature made Wed 20 Mar 11:06:04 2019 PST`
+
+`gpg: using RSA key C23172D0C9569591ECEC8ECB0E1E90279521EBB4`
+
+`gpg: Good signature from "andrerfneves (PGP Key for zepio) <zcash@andrenev.es>" [full]`
+
+## Checksums
+
+The file `sha256sum-vX.X.X.txt` contains the SHA256 checksums for each download. You can verify that the file you downloaded matches this checksum via the following command:
+
+`sha256sum Zepio-vX.X.X.dmg`
+
+`f818d42e2850050ff9fa22408f595d51855ceaa895336e67a0.6.661c339bc24  Zepio-vX.X.X.dmg`
+
+
+## System requirements
+
+If using the embedded `zcashd` full node daemon, the recommended system requirements are 5GB of free RAM and 30GB of free disk (the size of the blockchain increases over time).
+
+## Compiling from source
+
+For an in-depth explanation on how to build **Zepio** from source, please follow the `Building` section of the project's [`README`](https://github.com/ZcashFoundation/zepio/blob/master/README.md).

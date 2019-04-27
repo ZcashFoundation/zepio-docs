@@ -1,10 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 export default {
-  title: 'Zepio Documentation',
-  description: 'Zepio Documentation',
-  plugins: [],
+  title: 'Zepio Wallet',
+  description: 'Zepio Wallet',
+  themeConfig: {
+    colors: {
+      primary: 'tomato',
+    },
+  },
+  public: 'config/docz/public',
   htmlContext: {
+    favicon: 'public/favicon.ico',
     head: {
       links: [
         {
