@@ -1,7 +1,6 @@
 {
   "name": "zepio-docs",
-  "version": "0.3.0",
-  "private": true,
+  "version": "0.3.1",
   "author": {
     "name": "André Neves",
     "email": "andrerfneves@protonmail.com",
