@@ -7,7 +7,15 @@ route: /troubleshooting
 
 Please read the error cases below to attempt resolving your issues. If your issue is not resolved by reading any of the troubleshooting answers, please file a GitHub issue.
 
-The debug.log file is the first place to start for troubleshooting issues. The file is located in the data directory and by default is found in the following locations:
+There are two sets of logs: Zepio logs, and `zcashd` logs. Zepio's logs are located on the paths below and should provide you information from the application's renderer process:
+
+> `Windows: %HOMEPATH%/AppData/Roaming/Zepio/main-process-logs.txt`
+
+> `macOS: ~/Library/Application Support/Zepio/main-process-logs.txt`
+
+> `Linux: ~/.Zepio/main-process-logs.txt`
+
+The debug.log file is another place to try troubleshooting issues. The file is located in the data directory and by default is found in the following locations:
 
 > `Windows: %HOMEPATH%/AppData/Roaming/Zcash/debug.log`
 
