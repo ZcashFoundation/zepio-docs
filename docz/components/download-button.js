@@ -27,7 +27,7 @@ const Text = styled.div`
 
 export const DownloadButton = ({ label }) => (
   <Container>
-    <Wrapper href='/installation'>
+    <Wrapper href='https://github.com/ZcashFoundation/zepio/releases' target='_blank'>
       <Text>{label}</Text>
     </Wrapper>
   </Container>
